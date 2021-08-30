@@ -1,0 +1,32 @@
+<ActionBar title="Second">
+    <!-- https://developer.android.com/reference/android/R.drawable.html -->
+    <ActionItem (tap)="goBack()"
+        android.systemIcon="ic_menu_back"
+        android.position="actionBar"></ActionItem>
+</ActionBar>
+<ScrollView height="100%">
+    <DockLayout>
+        <SearchBar dock="top"
+            hint="Enter search term here ..." width="100%">
+        </SearchBar>
+        <Switch checked="true" dock="top"></Switch>
+        <progress value="25" maxValue="100" dock="top"></progress>
+        <DatePicker
+            year="1980"
+            month="4"
+            day="20"
+            verticalAlignment="center"
+            dock="top">
+        </DatePicker>
+        <TimePicker
+            hour="9"
+            minute="25"
+            maxHour="23"
+            maxMinute="59"
+            minuteInterval="5"
+            dock="top">
+        </TimePicker>
+        <TextView hint="Enter some text..." dock="top">
+        </TextView>
+    </DockLayout>
+</ScrollView>

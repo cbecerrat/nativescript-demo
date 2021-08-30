@@ -1,0 +1,13 @@
+<DockLayout backgroundColor="white" style="margin-top: 30;">
+    <StackLayout horizontalAlignment="center" verticalAlignment="center" dock="top">
+        <Label text="Please choose">
+        </Label>
+    </StackLayout>
+    <ListView [items]="frameworks" class="list-group" dock="bottom">
+        <ng-template let-framework="item">
+            <StackLayout class="list-group-item" (tap)="close(framework)">
+                <Label text="{{ framework }}" class="label"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</DockLayout>

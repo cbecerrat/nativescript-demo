@@ -1,9 +1,32 @@
-<ActionBar title="Details"></ActionBar>
+<ActionBar title="Details">
+    <!-- https://developer.android.com/reference/android/R.drawable.html -->
+    <ActionItem (tap)="goBack()"
+        android.systemIcon="ic_menu_back"
+        android.position="actionBar"></ActionItem>
+    <ActionItem
+        android.systemIcon="ic_menu_search"
+        android.position="actionBar"></ActionItem>
+    <ActionItem
+        android.systemIcon="ic_menu_home"
+        android.position="actionBar"></ActionItem>
+    <ActionItem
+        android.systemIcon="ic_menu_compass"
+        android.position="actionBar"></ActionItem>
+    <ActionItem
+        android.systemIcon="ic_menu_camera"
+        android.position="actionBar"></ActionItem>
+</ActionBar>
 
 <FlexboxLayout flexDirection="column">
-  <FlexboxLayout class="m-15">
-    <Label class="h2" [text]="item.id + '. '"></Label>
-    <Label class="h2" [text]="item.name"></Label>
-  </FlexboxLayout>
-  <Label class="h4 m-15" [text]="item.role"></Label>
+    <FlexboxLayout class="m-15">
+        <Label class="h2"
+            [text]="item.id + '. '">
+        </Label>
+        <Label class="h2"
+            [text]="item.name">
+        </Label>
+    </FlexboxLayout>
+    <Label class="h4 m-15"
+        [text]="item.role">
+    </Label>
 </FlexboxLayout>

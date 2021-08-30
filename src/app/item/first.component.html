@@ -1,0 +1,53 @@
+<DockLayout>
+    <FlexboxLayout justifyContent="space-around" dock="bottom">
+        <SegmentedBar>
+            <SegmentedBarItem title="First"></SegmentedBarItem>
+            <SegmentedBarItem title="Second"></SegmentedBarItem>
+            <SegmentedBarItem title="Third"></SegmentedBarItem>
+        </SegmentedBar>
+    </FlexboxLayout>
+    <FlexboxLayout justifyContent="space-around" dock="bottom">
+        <ActivityIndicator [busy]="true">
+        </ActivityIndicator>
+    </FlexboxLayout>
+    <DockLayout dock="bottom" horizontalAlignment="center">
+        <TextField
+            hint="Enter Date"
+            secure="false"
+            keyboardType="datetime"
+            returnKeyType="done"
+            autocorrect="false"
+            maxLength="10"
+            dock="left"
+            width="60%">
+        </TextField>
+        <button
+            text="Tap me!"
+            dock="right"
+            width="40%"
+            (tap)="navigate()"
+            style="border-color: blue;"></button>
+    </DockLayout>
+    <StackLayout dock="bottom" orientation="horizontal" backgroundColor="#3c495e" verticalAlignment="center">
+        <Slider [value]="sliderValue"
+            minValue="0"
+            maxValue="100"
+            (valueChange)="onSliderValueChange($event)"
+            width="80%"
+            style="background-color: black;">
+        </Slider>
+        <StackLayout horizontalAlignment="center" verticalAlignment="center">
+            <Label text="{{sliderValue}}" style="color: white;">
+            </Label>
+        </StackLayout>
+    </StackLayout>
+    <GridLayout flexDirection="column" dock="top">
+        <ListView [items]="items">
+            <ng-template let-item="item">
+                <GridLayout [nsRouterLink]="['/item', item.id]" pageTransition="slide">
+                    <Label [text]="item.name"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+</DockLayout>
